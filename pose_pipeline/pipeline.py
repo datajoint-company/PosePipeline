@@ -8,16 +8,12 @@ from datetime import datetime, timedelta
 import shutil
 
 import datajoint as dj
+from multi_camera.datajoint import DB_PREFIX
 
 from .utils.keypoint_matching import match_keypoints_to_bbox
 from .env import add_path
 
-if "custom" not in dj.config:
-    dj.config["custom"] = {}
-
-db_prefix = dj.config["custom"].get("database.prefix", "")
-
-schema = dj.schema(db_prefix + "pose_pipeline")
+schema = dj.schema(DB_PREFIX + "pose_pipeline")
 
 
 @schema
