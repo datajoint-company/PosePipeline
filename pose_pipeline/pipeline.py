@@ -500,8 +500,7 @@ class TrackingBboxMethodLookup(dj.Lookup):
 class TrackingBboxMethod(dj.Manual):
     definition = """
     -> Video
-    tracking_method   : int
-    ---
+    -> TrackingBboxMethodLookup
     """
 
 
@@ -1019,7 +1018,7 @@ class TopDownMethodLookup(dj.Lookup):
 class TopDownMethod(dj.Manual):
     definition = """
     -> PersonBbox
-    top_down_method    : int
+    -> TopDownMethodLookup
     """
 
 
